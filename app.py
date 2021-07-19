@@ -5,9 +5,9 @@ st.markdown("## Welcome to the Donation page.")
 st.title("Donation")
 st.header("Let us come together and donate something for the needy.")
 menu = ["Book Donation", "Blood Donation","Food Donation", "None"]
-"""
-choice = st.radio("Navigation",["Book Donation", "Blood Donation","Food Donation", "None"])
-"""
+
+# choice = st.radio("Navigation",["Book Donation", "Blood Donation","Food Donation", "None"])
+
 choice = st.sidebar.selectbox("Menu", menu)
 if choice=="Book Donation":
     bookDonation.bookdonate()
