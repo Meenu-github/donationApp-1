@@ -7,11 +7,11 @@ def foodDonate() :
         namefood = st.text_input("Enter your name : ")
         foodaddress = st.text_input("Enter your address please : ")
         foodidProof = st.text_input("Enter your Id Proof Number : ")
-        if (namefood and foodaddress and foodidProof) == True:
-            foodsubmission = st.form_submit_button(label="Submit")
-            if foodsubmission==True:
-                st.info("Successfully registered for food donation")
-            else:
-                st.info("Please submit the form.")
+        #if (namefood and foodaddress and foodidProof) == True:
+        foodsubmission = st.form_submit_button(label="Submit")
+        if foodsubmission==True:
+            st.info("Successfully registered for food donation")
+        else:
+            st.info("Please submit the form.")
 
 print(foodDonate())

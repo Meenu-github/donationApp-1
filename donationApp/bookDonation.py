@@ -7,10 +7,11 @@ def bookdonate() :
         bookname = st.text_input("Enter your name : ")
         address = st.text_input("Enter your address please : ")
         bookidProof = st.text_input("Enter your Id Proof Number : ")
-        if (bookname and address and bookidProof) == True:
-            submissionbook = st.form_submit_button()
-            if submissionbook==True:
-                st.info("Successfully submitted the form.")
-            else:
-                st.info("Please submit the form.")
+        #if (bookname and address and bookidProof) == True:
+        submissionbook = st.form_submit_button()
+        if submissionbook==True:
+            st.info("Successfully submitted the form.")
+        else:
+            st.info("Please submit the form.")
+print(bookdonate())
 
