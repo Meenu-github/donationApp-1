@@ -7,15 +7,15 @@ import pandas as pd
 #proj = pd.read_excel('proj.xlsx')
 #exp = pxl.load_workbook('proj.xlsx')
 
-projDemo = pd.read_excel('../donationApp/proj.xlsx')
-exp = pxl.load_workbook('../donationApp/proj.xlsx')
+projDemo = pd.read_excel('../proj.xlsx')
+exp = pxl.load_workbook('../proj.xlsx')
 sheet = exp.active
 maxrow = sheet.max_row+1
 #sheet = exp['Sheet2']
 
 def type(selectRole):
     if selectRole == 'Hospital':
-        exp = pd.read_excel('../donationApp/BloodDonation.xlsx')
+        exp = pd.read_excel('../BloodDonation.xlsx')
         #new = pxl.load_workbook('../donationApp/BloodDonation.xlsx')
         #newsheet = new.active
         #sheet = exp.active
@@ -24,7 +24,7 @@ def type(selectRole):
         
 
     if selectRole == 'Food Distributor':
-        exp1 = pd.read_excel('../donationApp/FoodDonation.xlsx')
+        exp1 = pd.read_excel('../FoodDonation.xlsx')
         #new = pxl.load_workbook('../donationApp/FoodDonation.xlsx')
         #newsheet = new.active
         #sheet = exp1.active
@@ -33,7 +33,7 @@ def type(selectRole):
         
 
     if selectRole == 'Orphanage':
-        exp2 = pd.read_excel('../donationApp/BookDonation.xlsx')
+        exp2 = pd.read_excel('../BookDonation.xlsx')
         #new = pxl.load_workbook('../donationApp/BookDonation.xlsx')
         #newsheet = new.active
         #sheet = exp2.active
@@ -66,7 +66,7 @@ def loginPages():
 
             submissionButton = st.form_submit_button(label="Sign up")
             if submissionButton == True:
-                exp.save('../donationApp/proj.xlsx')
+                exp.save('../proj.xlsx')
                 st.success("Successfully sign up")
                 #data = ['Yes, I want donor data', 'No, I don\'t want donor data']
                 #b2 = st.selectbox('Do you want data of book donor :', data)
