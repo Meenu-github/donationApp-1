@@ -1,6 +1,7 @@
 import streamlit as st
 import openpyxl as pxl
 import pandas as pd
+import base64
 
 #import gspread
 #from gspread_dataframe import get_as_dataframe 
@@ -43,6 +44,18 @@ def type(selectRole):
 
 
 def loginPages():
+    main_bg = "book1.gif"
+    main_bg_ext = "gif"
+    st.markdown(f"""
+    <style>
+    .reportview-container {{
+        background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
+        
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
     page_name = ['Register', 'Login']
     page = st.radio('Choose Register/Login', page_name)
     if page == 'Register':

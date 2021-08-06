@@ -1,8 +1,23 @@
 import streamlit as st
 from donationApp import bookDonation, bloodDonation, foodDonation, firstpage, loginPage
+import base64
+
+
+main_bg = "book1.gif"
+main_bg_ext = "gif"
+st.markdown(
+    f"""
+    <style>
+    .reportview-container {{
+        background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
+        
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.title("Donation")
 st.header(" Welcome to the Donation page.")
-
 st.subheader("Let us come together and donate something for the needy.")
 menu = ["None", "Book Donation", "Blood Donation","Food Donation","Organization Login/Register"]
 

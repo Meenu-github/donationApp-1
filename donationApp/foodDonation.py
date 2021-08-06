@@ -1,5 +1,6 @@
 import streamlit as st
 import openpyxl as pxl
+import base64
 wb = pxl.load_workbook('FoodDonation.xlsx')
 ws = wb.active
 maxrow= ws.max_row+1
@@ -7,6 +8,18 @@ maxrow= ws.max_row+1
 
 
 def foodDonate() :
+    main_bg = "book1.gif"
+    main_bg_ext = "gif"
+    st.markdown(f"""
+    <style>
+    .reportview-container {{
+        background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
+        
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
     st.markdown("FOOD DONATION")
     st.title("Welcome to the food donation page, your donated food can bring hope in someones life of survival.\nCome let us donate food for needy one.\nYou don't have to walk and donate it you just have to register yourself and we will pick the food from your house address that will be provided.")
     st.write("Here if you are willing to donate food\n you have to register yourself.")

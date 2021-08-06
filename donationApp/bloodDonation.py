@@ -1,10 +1,23 @@
 import streamlit as st
 import openpyxl as pxl
+import base64
 wb = pxl.load_workbook('BloodDonation.xlsx')
 ws = wb.active
 maxrow= ws.max_row+1
 
 def bloodDonate() :
+    main_bg = "book1.gif"
+    main_bg_ext = "gif"
+    st.markdown(f"""
+    <style>
+    .reportview-container {{
+        background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
+        background-position: center; background-size: cover; background-repeat: no repeat;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
     st.title("Blood Donation")
     st.write("This is the blood donation page.")
     st.write("Here if you are willing to donate blood\n you have to register yourself.")
